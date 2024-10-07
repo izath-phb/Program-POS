@@ -209,7 +209,11 @@ public class Login extends javax.swing.JFrame {
             System.out.println("Role: " + role);
             
             this.setVisible(false);
-            new ADMIN().setVisible(true);
+            switch (role) {
+                case "admin" -> new Profile_admin().setVisible(true);
+                case "user" -> new Profile_user().setVisible(true);
+                case "kasir" -> new Profile_kasir().setVisible(true);
+            }
             } else {
                 System.out.println("No matching records found.");
             }
